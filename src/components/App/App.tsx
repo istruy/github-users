@@ -15,7 +15,7 @@ export const App: FC = () => {
     fetch('https://api.github.com/users', {
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${API_KEY}`,
+        Authorization: `Bearer ${process.env.API_KEY}`,
       },
     })
       .then((response) => response.json())
@@ -32,7 +32,7 @@ export const App: FC = () => {
         const getRes: Response = await fetch(`https://api.github.com/users/${user.login}/repos`, {
           headers: {
             Accept: 'application/vnd.github+json',
-            Authorization: `Bearer ${API_KEY}`,
+            Authorization: `Bearer ${process.env.API_KEY}`,
           },
         });
 
