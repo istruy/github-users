@@ -1,1 +1,1 @@
-export const API_KEY = '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';
+export const API_KEY = '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';
