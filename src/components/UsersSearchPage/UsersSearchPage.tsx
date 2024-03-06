@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import { UsersList } from '../UsersList/UsersList';
 import { UserListGithub } from '../../types';
-import { API_KEY } from '../../const';
 import { useLocation } from 'react-router-dom';
 
 export const UsersSearchPage: FC = () => {
@@ -18,7 +17,7 @@ export const UsersSearchPage: FC = () => {
         fetch(`https://api.github.com/users`, {
             headers: {
                 Accept: 'application/vnd.github+json',
-                Authorization: `Bearer ${API_KEY}`,
+                Authorization: `Bearer ${process.env.API_KEY}`,
             },
         })
             .then((response) => response.json())
@@ -35,7 +34,7 @@ export const UsersSearchPage: FC = () => {
                 const getRes: Response = await fetch(`https://api.github.com/users/${user.login}/repos`, {
                     headers: {
                         Accept: 'application/vnd.github+json',
-                        Authorization: `Bearer ${API_KEY}`,
+                        Authorization: `Bearer ${process.env.API_KEY}`,
                     },
                 });
 

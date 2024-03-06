@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Repository, UserGithub } from '../../types';
-import { API_KEY } from '../../const';
 import './UserProfilePage.css';
 import { decOfNum } from '../utils';
 
@@ -14,7 +13,7 @@ export const UserProfilePage: FC = () => {
         fetch(`https://api.github.com/users/${idUser}`, {
             headers: {
                 Accept: 'application/vnd.github+json',
-                Authorization: `Bearer ${API_KEY}`,
+                Authorization: `Bearer ${process.env.API_KEY}`,
             },
         })
             .then((response) => response.json())
@@ -33,7 +32,7 @@ export const UserProfilePage: FC = () => {
         fetch(`https://api.github.com/users/${idUser}/repos`, {
             headers: {
                 Accept: 'application/vnd.github+json',
-                Authorization: `Bearer ${API_KEY}`,
+                Authorization: `Bearer ${process.env.API_KEY}`,
             },
         })
             .then((response) => response.json())
