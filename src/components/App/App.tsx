@@ -1,6 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
 import { UserListGithub } from '../../types';
-import { API_KEY } from '../../const';
 import { Header } from '../Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import { UserProfilePage } from '../UserProfilePage/UserProfilePage';
