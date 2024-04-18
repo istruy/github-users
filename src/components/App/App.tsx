@@ -30,8 +30,8 @@ export const App: FC = () => {
       for (const user of users) {
         const getRes: Response = await fetch(`https://api.github.com/users/${user.login}/repos`, {
           headers: {
-            Accept: 'application/vnd.github+json',
-            Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+            "Accept": "application/vnd.github+json",
+            "Authorization": `Bearer ${process.env.REACT_APP_API_KEY}`,
           },
         });
 
