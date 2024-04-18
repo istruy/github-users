@@ -13,7 +13,7 @@ export const UserProfilePage: FC = () => {
         fetch(`https://api.github.com/users/${idUser}`, {
             headers: {
                 Accept: 'application/vnd.github+json',
-                Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+                Authorization: `Bearer ${process.env.API_KEY}`,
             },
         })
             .then((response) => response.json())
@@ -32,7 +32,7 @@ export const UserProfilePage: FC = () => {
         fetch(`https://api.github.com/users/${idUser}/repos`, {
             headers: {
                 Accept: 'application/vnd.github+json',
-                Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+                Authorization: `Bearer ${process.env.API_KEY}`,
             },
         })
             .then((response) => response.json())
