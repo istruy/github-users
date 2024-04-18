@@ -5,13 +5,13 @@ import { Route, Routes } from 'react-router-dom';
 import { UserProfilePage } from '../UserProfilePage/UserProfilePage';
 import { UsersPage } from '../UsersPage/UsersPage';
 import { UsersSearchPage } from '../UsersSearchPage/UsersSearchPage';
-const processVariable: any = process.env.DOTENV;
 
 export const App: FC = () => {
   const [users, setUsers] = useState<UserListGithub[]>([]);
   const [usersWithSize, setUsersWithSize] = useState<UserListGithub[]>([]);
 
-  console.log(process.env.REACT_APP_API_URL);
+  console.log(process.env.REACT_APP_API_KEY);
+  console.log(process.env.API_KEY);
 
   // process.env.REACT_APP_API_URL
 
@@ -19,7 +19,7 @@ export const App: FC = () => {
     fetch(`https://api.github.com/users`, {
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${processVariable.REACT_APP_API_KEY}`,
+        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
       },
     })
       .then((response) => response.json())
