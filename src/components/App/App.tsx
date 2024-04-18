@@ -19,7 +19,7 @@ export const App: FC = () => {
     fetch(`https://api.github.com/users`, {
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+        Authorization: `token ${process.env.REACT_APP_API_KEY}`,
       },
     })
       .then((response) => response.json())
