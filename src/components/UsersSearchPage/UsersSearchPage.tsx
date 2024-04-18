@@ -17,7 +17,7 @@ export const UsersSearchPage: FC = () => {
         fetch(`https://api.github.com/users`, {
             headers: {
                 Accept: 'application/vnd.github+json',
-                Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+                Authorization: `token ${process.env.REACT_APP_API_KEY}`,
             },
         })
             .then((response) => response.json())
@@ -34,7 +34,7 @@ export const UsersSearchPage: FC = () => {
                 const getRes: Response = await fetch(`https://api.github.com/users/${user.login}/repos`, {
                     headers: {
                         Accept: 'application/vnd.github+json',
-                        Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+                        Authorization: `token ${process.env.REACT_APP_API_KEY}`,
                     },
                 });
 
