@@ -7,7 +7,7 @@ module.exports = {
     mode: process.env.NODE_ENV || 'production',
     entry: './src/index.tsx',
     output: {
-        path: path.resolve(__dirname, 'docs'),
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.[contenthash].js',
         publicPath: '/',
     },
