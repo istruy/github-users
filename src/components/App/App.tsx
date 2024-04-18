@@ -5,7 +5,6 @@ import { Route, Routes } from 'react-router-dom';
 import { UserProfilePage } from '../UserProfilePage/UserProfilePage';
 import { UsersPage } from '../UsersPage/UsersPage';
 import { UsersSearchPage } from '../UsersSearchPage/UsersSearchPage';
-import { env } from 'process';
 
 export const App: FC = () => {
   const [users, setUsers] = useState<UserListGithub[]>([]);
@@ -15,7 +14,7 @@ export const App: FC = () => {
     fetch('https://api.github.com/users', {
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: `Bearer ${env.API_KEY}`,
+        Authorization: `Bearer ${process.env.API_KEY}`,
       },
     })
       .then((response) => response.json())
@@ -32,7 +31,7 @@ export const App: FC = () => {
         const getRes: Response = await fetch(`https://api.github.com/users/${user.login}/repos`, {
           headers: {
             Accept: 'application/vnd.github+json',
-            Authorization: `Bearer ${env.API_KEY}`,
+            Authorization: `Bearer ${process.env.API_KEY}`,
           },
         });
 
