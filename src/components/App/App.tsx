@@ -10,16 +10,13 @@ export const App: FC = () => {
   const [users, setUsers] = useState<UserListGithub[]>([]);
   const [usersWithSize, setUsersWithSize] = useState<UserListGithub[]>([]);
 
-  console.log(process.env.REACT_APP_API_KEY);
   console.log(process.env.API_KEY);
-
-  // process.env.REACT_APP_API_URL
 
   useEffect(() => {
     fetch(`https://api.github.com/users`, {
       headers: {
         Accept: 'application/vnd.github+json',
-        Authorization: `token ${process.env.REACT_APP_API_KEY}`,
+        Authorization: `Bearer ${process.env.API_KEY}`,
       },
     })
       .then((response) => response.json())
@@ -36,7 +33,7 @@ export const App: FC = () => {
         const getRes: Response = await fetch(`https://api.github.com/users/${user.login}/repos`, {
           headers: {
             Accept: "application/vnd.github+json",
-            Authorization: `token ${process.env.REACT_APP_API_KEY}`,
+            Authorization: `Bearer ${process.env.API_KEY}`,
           },
         });
 
