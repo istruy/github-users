@@ -10,8 +10,6 @@ export const App: FC = () => {
   const [users, setUsers] = useState<UserListGithub[]>([]);
   const [usersWithSize, setUsersWithSize] = useState<UserListGithub[]>([]);
 
-  console.log(process.env.API_KEY);
-
   useEffect(() => {
     fetch(`https://api.github.com/users`, {
       headers: {
